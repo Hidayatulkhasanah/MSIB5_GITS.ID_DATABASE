@@ -4,7 +4,7 @@
 
     // Update
     if (isset($_POST['update'])) {
-        $id = $_POST['id'];
+        $id_user = $_POST['id_user'];
 
         $nama = $_POST['nama'];
         $jabatan = $_POST['jabatan'];
@@ -12,15 +12,15 @@
 
         // query untuk update data
         $query = mysqli_query($connect,
-        "UPDATE users SET name='$nama', email='$jabatan', mobile='$jenis_kelamin' WHERE id='$id' ");
+        "UPDATE tb_user SET nama='$nama', jabatan='$jabatan', jenis_kelamin='$jenis_kelamin' WHERE id_user='$id_user' ");
 
         header('Location: index.php');
     }
 
     // Ambil data user
-    $user_id = $_GET['user_id'];
+    $id_user = $_GET['id_user'];
 
-    $query = mysqli_query($connect, "SELECT * FROM users WHERE id='$id'");
+    $query = mysqli_query($connect, "SELECT * FROM tb_user WHERE id_user='$id_user'");
 
     while($user_data = mysqli_fetch_array($query)) {
         $nama = $user_data['nama'];
@@ -50,11 +50,14 @@
                 <td><input type="text" name="jabatan" value="<?= $jabatan ?>"></td>
             </tr>
             <tr>
-                <td>Jenis Kelamin</td>
-                <td><input type="text" name="jenis_kelamin" value="<?= $jenis_kelamin ?>"></td>
-            </tr>
+            <td>Jenis Kelamin</td>
+                <td>
+                    <select type="text" name="jenis_kelamin">
+                    <option>Laki-laki</option>
+                    <option>Perempuan</option>
+                </td> 
             <tr>
-                <td><input type="hidden" name="id" value="<?php echo $_GET['id'] ?>"></td>
+                <td><input type="hidden" name="id_user" value="<?php echo $_GET['id_user'] ?>"></td>
                 <td><input type="submit" name="update" value="Update"></td>
             </tr>
         </table>
