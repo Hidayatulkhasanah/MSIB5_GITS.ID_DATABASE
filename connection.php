@@ -8,9 +8,9 @@ $database_password = '';
 //
 $connect = mysqli_connect($host, $database_username, $database_password, $database_name);
 
-if ($connect){
-    echo "connected";
-}else {
-    echo "not connected";
-}
+// if ($connect){
+//     echo "connected";
+// }else {
+//     echo "not connected";
+// }
 ?>

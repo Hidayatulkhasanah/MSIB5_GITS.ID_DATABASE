@@ -35,33 +35,41 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Membuat User</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
-    <a href="index.php">Kembali</a>
-
-    <form action="edit.php" method="POST" name="editUser">
-        <table border="0">
-            <tr>
-                <td>Nama</td>
-                <td><input type="text" name="nama" value="<?= $nama ?>"></td>
-            </tr>
-            <tr>
-                <td>Jabatan</td>
-                <td><input type="text" name="jabatan" value="<?= $jabatan ?>"></td>
-            </tr>
-            <tr>
-            <td>Jenis Kelamin</td>
-                <td>
-                    <select type="text" name="jenis_kelamin">
-                    <option>Laki-laki</option>
-                    <option>Perempuan</option>
-                </td> 
-            <tr>
+    <div class="container p-4">
+        <h1 class="mb-3" style="font-size: 30px;">Edit Data User</h1>
+        <div class="card card-body bg-warning">
+        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+            <a href="index.php"><button class="btn btn-secondary">Kembali</button></a>
+        </div>
+            <form action="edit.php" method="POST" name="editUser">
+                <div class="mb-3">
+                  <label for="exampleInputEmail1" class="form-label">Nama Lengkap :</label>
+                  <input type="text" name="nama" value="<?= $nama ?>" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                </div>
+                <div class="mb-3">
+                <select name="jabatan" value="<?= $jabatan ?>" class="form-select" aria-label="Default select example">
+                    <option selected>Jabatan</option>
+                    <option value="1">Petugas</option>
+                    <option value="2">Mahasiswa</option>
+                </select>
+                </div>
+                <div class="mb-3">
+                <select name="jenis_kelamin" value="<?= $jenis_kelamin ?>" class="form-select" aria-label="Default select example">
+                    <option selected>Jenis Kelamin</option>
+                    <option value="1">L</option>
+                    <option value="2">P</option>
+                </select>
+                </div>
                 <td><input type="hidden" name="id_user" value="<?php echo $_GET['id_user'] ?>"></td>
-                <td><input type="submit" name="update" value="Update"></td>
-            </tr>
-        </table>
-    </form>
+                <button name="update" value="Update" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+    </div>
+    
 </body>
 </html>
