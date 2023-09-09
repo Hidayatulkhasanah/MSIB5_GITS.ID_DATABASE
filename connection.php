@@ -8,6 +8,7 @@ $database_password = '';
 //
 $connect = mysqli_connect($host, $database_username, $database_password, $database_name);
 
+//buat cek udh konek atau belom
 // if ($connect){
 //     echo "connected";
 // }else {
