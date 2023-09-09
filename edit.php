@@ -2,7 +2,7 @@
 
     include_once("connection.php");
 
-    // Update
+    // Update user
     if (isset($_POST['update'])) {
         $id_user = $_POST['id_user'];
 
@@ -44,12 +44,12 @@
         <h1 class="mb-3" style="font-size: 30px;">Edit Data User</h1>
         <div class="card card-body bg-warning">
         <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-            <a href="index.php"><button class="btn btn-secondary">Kembali</button></a>
+            <a href="index.php"><button class="btn btn-secondary">Back</button></a>
         </div>
             <form action="edit.php" method="POST" name="editUser">
                 <div class="mb-3">
-                  <label for="exampleInputEmail1" class="form-label">Nama Lengkap :</label>
-                  <input type="text" name="nama" value="<?= $nama ?>" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                <label for="exampleInputEmail1" class="form-label">Nama Lengkap :</label>
+                <input type="text" name="nama" value="<?= $nama ?>" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
                 </div>
                 <div class="mb-3">
                 <select name="jabatan" value="<?= $jabatan ?>" class="form-select" aria-label="Default select example">
