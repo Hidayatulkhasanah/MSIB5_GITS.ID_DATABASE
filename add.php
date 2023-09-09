@@ -17,8 +17,8 @@
         </div>
             <form action="add.php" method="POST" name="addUser">
                 <div class="mb-3">
-                  <label for="exampleInputEmail1" class="form-label">Nama Lengkap :</label>
-                  <input type="text" name="nama" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                <label for="exampleInputEmail1" class="form-label">Nama Lengkap :</label>
+                <input type="text" name="nama" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
                 </div>
                 <div class="mb-3">
                 <select name="jabatan" class="form-select" aria-label="Default select example">
@@ -54,7 +54,7 @@
             $result = mysqli_query($connect, 
             "INSERT INTO tb_user (nama,jabatan,jenis_kelamin) VALUES ('$nama','$jabatan','$jenis_kelamin')");
 
-            echo "Berhasil menambah user. <a href='index.php'>melihat user</a>";
+            echo "Selamat, kamu berhasil menambahkan user. <a href='index.php'>melihat user</a>";
         }
     ?>
 </body>
